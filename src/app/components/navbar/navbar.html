@@ -1,1 +1,32 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="navbar__container">
+    <div class="navbar__logo" (click)="scrollTo('hero')">
+      <span>BRAVOS</span>
+      <small>Oficina de Motos</small>
+    </div>
+
+    <ul class="navbar__menu">
+      <li>
+        <button type="button" (click)="scrollTo('hero')">Início</button>
+      </li>
+      <li>
+        <button type="button" (click)="scrollTo('services')">Serviços</button>
+      </li>
+      <li>
+        <button type="button" (click)="scrollTo('about')">Sobre</button>
+      </li>
+      <li>
+        <button type="button" (click)="scrollTo('contact')">Contato</button>
+      </li>
+    </ul>
+
+    <a
+      class="navbar__cta"
+      href="https://wa.me/5500000000000"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp
+    </a>
+  </div>
+</nav>

@@ -1,11 +1,27 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.scss',
+  styleUrls: ['./navbar.scss']
 })
 export class Navbar {
 
+  scrollTo(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (!element) {
+      return;
+    }
+
+    const navbarHeight = 72;
+    const y =
+      element.getBoundingClientRect().top +
+      window.pageYOffset -
+      navbarHeight;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
 }
