@@ -6,12 +6,20 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './navbar.html',
-  styleUrls: ['./navbar.scss']
+  styleUrls: ['./navbar.scss'],
 })
 export class Navbar {
 
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   scrollTo(sectionId: string): void {
     const element = document.getElementById(sectionId);
+
     if (!element) {
       return;
     }
@@ -22,6 +30,9 @@ export class Navbar {
       window.pageYOffset -
       navbarHeight;
 
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth',
+    });
   }
 }
