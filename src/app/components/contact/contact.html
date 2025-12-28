@@ -1,1 +1,100 @@
-<p>contact works!</p>
+<!-- src/app/components/contact/contact.component.html -->
+<section class="contact" id="contact">
+  <div class="contact__container">
+
+    <!-- TEXTO -->
+    <div class="contact__text">
+      <h2>Entre em contato com a <span>Bravos</span></h2>
+
+      <p>
+        Atendimento direto com a oficina.  
+        Agende serviços, tire dúvidas ou solicite orçamento.
+      </p>
+
+      <ul class="contact__features">
+        <li><i class="bi bi-clock"></i> Seg à Sex • 08h às 18h</li>
+        <li><i class="bi bi-whatsapp"></i> Resposta rápida no WhatsApp</li>
+        <li><i class="bi bi-tools"></i> Especialistas em motos</li>
+      </ul>
+    </div>
+
+    <!-- FORM -->
+    <form class="contact__form" (ngSubmit)="sendToWhatsapp()" novalidate>
+
+      <span class="contact__badge">
+        <i class="bi bi-calendar-check"></i>
+        Agendamento
+      </span>
+
+      <input
+        type="text"
+        placeholder="Seu nome"
+        name="name"
+        [(ngModel)]="name"
+        required
+      />
+
+      <input
+        type="tel"
+        placeholder="WhatsApp"
+        name="phone"
+        [(ngModel)]="phone"
+        required
+      />
+      <div class="field">
+        <label>Serviço desejado</label>
+        <select name="service" [(ngModel)]="service">
+          <option>Manutenção</option>
+          <option>Revisão</option>
+          <option>Diagnóstico</option>
+          <option>Preparação / Performance</option>
+          <option>Outro</option>
+        </select>
+      </div>
+
+      <div class="contact__row">
+
+        <!-- DATA -->
+        <div class="input-icon">
+          <i class="bi bi-calendar-event"></i>
+          <input
+            #dateInput
+            type="date"
+            name="date"
+            [(ngModel)]="date"
+            (click)="openDatePicker(dateInput)"
+            required
+          />
+        </div>
+
+        <!-- HORA -->
+        <div class="input-icon">
+          <i class="bi bi-clock"></i>
+          <input
+            #timeInput
+            type="time"
+            name="time"
+            [(ngModel)]="time"
+            (click)="openTimePicker(timeInput)"
+            required
+          />
+        </div>
+
+      </div>
+
+      <textarea
+        rows="4"
+        placeholder="Descreva o serviço"
+        name="message"
+        [(ngModel)]="message"
+      ></textarea>
+
+      <button type="submit">
+        <i class="bi bi-whatsapp"></i>
+        Enviar no WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+</section>

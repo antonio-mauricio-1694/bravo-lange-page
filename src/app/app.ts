@@ -4,6 +4,7 @@ import { Navbar } from './components/navbar/navbar';
 import { HeroComponent } from './components/hero/hero';
 import { Services } from './components/services/services';
 import { About } from './components/about/about';
+import { ContactComponent } from './components/contact/contact';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,7 +13,8 @@ import { About } from './components/about/about';
     Navbar,
     HeroComponent,
     Services,
-    About
+    About,
+    ContactComponent
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
