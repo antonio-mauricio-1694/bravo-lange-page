@@ -199,3 +199,134 @@
     }
   }
 }
+.navbar__logo {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* TEXTO PRINCIPAL — 3D REAL */
+.logo__title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+
+  color: #ffffff;
+
+  /* 3D elegante */
+  text-shadow:
+    0 1px 0 #d1d1d1,
+    0 2px 0 #bcbcbc,
+    0 3px 0 #a7a7a7,
+    0 4px 8px rgba(0, 0, 0, 0.65);
+
+  transform: translateZ(0);
+}
+
+/* SUBTÍTULO */
+.logo__subtitle {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  color: #f5d547;
+  margin-top: 0.15rem;
+}
+
+/* HOVER — profundidade sutil */
+.navbar__logo:hover .logo__title {
+  text-shadow:
+    0 2px 0 #d1d1d1,
+    0 4px 0 #bcbcbc,
+    0 6px 14px rgba(0, 0, 0, 0.75);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .logo__title {
+    font-size: 1.3rem;
+    letter-spacing: 0.14em;
+  }
+
+  .logo__subtitle {
+    font-size: 0.6rem;
+  }
+}
+.navbar__logo {
+  display: inline-flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* TEXTO PRINCIPAL */
+.logo__title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+
+  color: #ffffff;
+
+  /* Profundidade por luz */
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.6),
+    0 6px 14px rgba(0, 0, 0, 0.85);
+
+  position: relative;
+}
+
+/* LUZ SUPERIOR (efeito 3D fino) */
+.logo__title::after {
+  content: 'BRAVOS';
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 213, 71, 0.75),
+    transparent 60%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  pointer-events: none;
+}
+
+/* SUBTÍTULO */
+.logo__subtitle {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.2rem;
+}
+
+/* HOVER — elevação suave */
+.navbar__logo:hover .logo__title {
+  transform: translateY(-1px);
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.7),
+    0 10px 22px rgba(0, 0, 0, 0.9);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .logo__title {
+    font-size: 1.3rem;
+    letter-spacing: 0.12em;
+  }
+
+  .logo__subtitle {
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+  }
+}
+
