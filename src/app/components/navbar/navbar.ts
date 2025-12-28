@@ -35,4 +35,6 @@ export class Navbar {
       behavior: 'smooth',
     });
   }
+
+  
 }
